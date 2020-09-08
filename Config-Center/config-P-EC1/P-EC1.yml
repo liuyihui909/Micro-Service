@@ -2,4 +2,4 @@
 
 spring:
   profiles:
-    include: datasource
+    include: datasource,log
