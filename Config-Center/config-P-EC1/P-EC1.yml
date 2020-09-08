@@ -2,4 +2,4 @@
 
 spring:
   profiles:
-    include: ./database/datasource-${spring.profiles.active},./log/log-${spring.profiles.active}
+    include: datasource-${spring.profiles.active},log-${spring.profiles.active}
