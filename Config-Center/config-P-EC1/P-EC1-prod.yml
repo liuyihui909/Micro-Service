@@ -1,3 +1,4 @@
 
 
-env: prod
+cur:
+  env: prod
