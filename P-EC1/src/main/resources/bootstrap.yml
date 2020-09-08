@@ -1,0 +1,25 @@
+
+
+# 服务提供端配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://@project.parent.artifactId@:123456@localhost:1111/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  profiles:
+    active: prod
+  application:
+    name: P-EC1
+  cloud:
+    config:
+      # 通过命令行spring.profiles.active参数指定目标运行环境（dev、test、prod），比如运行在test环境，微服务启动时会去配置中心匹配如下文件： - common-test.properties - datasource-test.properties - redis-test.properties - rabbitmq-test properties - base-service-test.properties - base-service-application.yml
+      # name: common,datasource,redis,rabbitmq,${spring.application.name},${spring.application.name}-application
+      label: master
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: Configurator
+

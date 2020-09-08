@@ -9,6 +9,8 @@
     <version>1.0.0</version>
     <modules>
         <module>Config-Server</module>
+        <module>Eureka-Server</module>
+        <module>P-EC1</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -37,4 +39,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>

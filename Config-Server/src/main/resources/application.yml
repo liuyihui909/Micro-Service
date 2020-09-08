@@ -1,0 +1,27 @@
+
+
+# 配置中心服务端配置文件
+server:
+  port: 2111
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://@project.parent.artifactId@:123456@localhost:1111/eureka/
+
+spring:
+  application:
+    name: Configurator
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/liuyihui909/Micro-Service
+          username: liuyh_mail@163.com
+          password: wn951108
+          default-label: master
+          #配置文件的检索目录 支持多个
+          #如果在配置中心文件中配置了spring.profiles.include属性，不管文件物理位置如何，文件逻辑位置都在同一目录
+          #如果config-client端配置了spring.cloud.config.name属性，则可不使用spring.profiles.include
+          search-paths: Config-Center/config-*,Config-Center/config-*/**

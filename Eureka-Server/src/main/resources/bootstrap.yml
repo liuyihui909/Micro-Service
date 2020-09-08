@@ -1,0 +1,17 @@
+
+
+# 注册中心服务端配置文件 bootstrap
+spring:
+  application:
+    name: Register
+  security:
+    user:
+      name: @project.parent.artifactId@
+      password: 123456
+
+#  cloud:
+#    inetutils:    #网卡设置
+#      ignored-interfaces:   #忽略的网卡
+#        - VM.*
+#      preferred-networks:   #优先使用的网段
+#        - 172.16

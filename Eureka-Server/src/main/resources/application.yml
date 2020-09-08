@@ -1,0 +1,14 @@
+
+
+# 注册中心服务端配置文件 application
+server:
+  port: 1111
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    prefer-same-zone-eureka: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
