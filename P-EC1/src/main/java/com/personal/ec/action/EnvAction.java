@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EnvAction {
 
-    @Value("${cur.env}")
+//    @Value("${cur.env}")
     private String env;
 
-    @Value("${log.env}")
+//    @Value("${log.env}")
     private String logEnv;
 
     @RequestMapping("/env")
