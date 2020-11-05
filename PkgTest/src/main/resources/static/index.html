@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body onload="start()">
+<h1>hello word</h1>
+<img style="display: none" id="img" src=""/>
+</body>
+<script language="JavaScript" type="text/javascript">
+    function start() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "img", false);
+        // 添加http头，发送信息至服务器时内容编码类型
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+        xhr.onreadystatechange = function () {
+            if (xhr.status === 200 && xhr.readyState === 4) {
+                var result = xhr.responseText;
+                var imgEle = document.getElementById("img");
+                console.log(result);
+                imgEle.setAttribute("src", result);
+                imgEle.setAttribute("style", "");
+            }
+        };
+        xhr.send("{\"param\": \"imgQry\"}");
+
+    }
+</script>
+</html>

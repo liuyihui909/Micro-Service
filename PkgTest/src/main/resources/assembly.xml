@@ -1,0 +1,13 @@
+<assembly>
+    <id>archive</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/PkgTest</directory>
+            <outputDirectory/>
+        </fileSet>
+    </fileSets>
+</assembly>
