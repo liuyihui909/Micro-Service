@@ -5,8 +5,9 @@ spring:
   mvc:
     view:
       suffix: .html
+  profiles:
+    include: register-${spring.profiles.active}
 
 logging:
   level:
     root: info
-

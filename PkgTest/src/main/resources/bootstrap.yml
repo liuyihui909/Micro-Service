@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: prod-sd
+  application:
+    name: Pkg
+# 服务提供端配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    prefer-same-zone-eureka: true
