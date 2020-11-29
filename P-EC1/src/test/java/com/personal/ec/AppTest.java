@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -20,7 +21,7 @@ public class AppTest {
     public void test() {
         int i = dao.addItem(new HashMap<String, Object>() {{
             put("id", ((int) (Math.random()*100000)));
-            put("time", 4);
+            put("time", new Timestamp(System.currentTimeMillis()));
             put("name", "qwe");
         }});
         System.out.println(i);
